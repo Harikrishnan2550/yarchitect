@@ -80,16 +80,18 @@ function Magnetic({ children }: { children: React.ReactNode }) {
   
   const reset = () => setPosition({ x: 0, y: 0 });
 
+  // BYPASS: Define props separately as 'any' to resolve React 19 / Motion type conflict
+  const motionProps: any = {
+    ref: ref,
+    onMouseMove: handleMouse,
+    onMouseLeave: reset,
+    animate: { x: position.x, y: position.y },
+    transition: { type: "spring", stiffness: 60, damping: 15, mass: 0.2 },
+    className: "inline-block w-full md:w-fit"
+  };
+
   return (
-    /* @ts-ignore - Required for React 19/Framer Motion type compatibility */
-    <motion.div
-      ref={ref as any} 
-      onMouseMove={(e: any) => handleMouse(e)} 
-      onMouseLeave={reset}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 60, damping: 15, mass: 0.2 }}
-      className="inline-block w-full md:w-fit"
-    >
+    <motion.div {...motionProps}>
       {children}
     </motion.div>
   );
