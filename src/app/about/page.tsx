@@ -82,7 +82,7 @@ function Magnetic({ children }: { children: React.ReactNode }) {
 
   return (
     <motion.div
-      ref={ref} onMouseMove={handleMouse} onMouseLeave={reset}
+      ref={ref} onMouseMove={(e: any) => handleMouse(e)} onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 60, damping: 15, mass: 0.2 }}
       className="inline-block w-full md:w-fit"
