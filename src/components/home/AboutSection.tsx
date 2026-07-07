@@ -17,7 +17,7 @@ export default function AboutSection() {
   const cardParallax = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
-    <section ref={containerRef} className="relative w-full bg-[#FAFAFA] text-[#0F2517] selection:bg-[#7A9C7E] selection:text-white pt-24 pb-24 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 overflow-hidden">
+    <section ref={containerRef} className="relative w-full bg-[#FAFAFA] text-[#0F2517] selection:bg-[#7A9C7E] selection:text-white pt-24 pb-8 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 overflow-hidden">
       {/* Texture Background */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap');

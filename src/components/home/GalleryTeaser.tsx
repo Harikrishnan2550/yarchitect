@@ -19,14 +19,10 @@ function PremiumButton({ href, label }: { href: string; label: string }) {
   );
 }
 
-const featuredProjects = [
-  { id: 1, title: "The Laterite House", category: "Residential", location: "Kerala, India", year: "2023", image: "/img1.png" },
-  { id: 2, title: "Monsoon Retreat", category: "Hospitality", location: "Wayanad, India", year: "2024", image: "/img5.png" },
-  { id: 3, title: "Oasis Workspace", category: "Commercial", location: "Bangalore, India", year: "2022", image: "/img6.png" },
-  { id: 4, title: "The Courtyard", category: "Residential", location: "Kochi, India", year: "2023", image: "/img7.png" },
-];
+import { projectsData } from '@/data/projects';
 
 export default function GalleryTeaser() {
+  const featuredProjects = projectsData.slice(0, 4);
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -52,7 +48,7 @@ export default function GalleryTeaser() {
       `}</style>
       
       {/* Sticky Scroll Container */}
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+      <div className="sticky top-0 h-screen overflow-hidden flex items-start pt-16 md:items-center md:pt-0">
         <div className="absolute inset-0 modern-texture z-0" />
 
         {/* Architectural Dot Grid */}
@@ -92,8 +88,8 @@ export default function GalleryTeaser() {
                 <div className="w-8 md:w-12 h-[1px] bg-[#7A9C7E]" />
               </div>
               <h2 className="font-serif text-5xl md:text-[90px] font-light text-[#0F2517] leading-[1.05] tracking-tight mb-12">
-                Living <br />
-                <span className="italic text-transparent" style={{ WebkitTextStroke: '1.5px #0F2517' }}>Archives.</span>
+                Design <br />
+                <span className="italic text-transparent" style={{ WebkitTextStroke: '1.5px #0F2517' }}>Gallery.</span>
               </h2>
               <PremiumButton href="/gallery" label="Explore Portfolio" />
             </div>
@@ -101,11 +97,11 @@ export default function GalleryTeaser() {
             {/* Horizontal Exhibition Cards */}
             {featuredProjects.map((project, idx) => (
               <div key={project.id} className="min-w-[85vw] md:min-w-[45vw] flex flex-col group cursor-pointer shrink-0 relative">
-                <Link href="/gallery" className="relative block h-[60vh] md:h-[70vh] w-full mt-8 md:mt-0">
+                <Link href={`/gallery/${project.id}`} className="flex flex-col w-full h-[65vh] md:h-[75vh] mt-8 md:mt-0 gap-6">
                   
                   {/* Image Window */}
-                  <div className="w-full h-full overflow-hidden relative rounded-[40px] md:rounded-[60px] shadow-[0_30px_80px_rgba(15,37,23,0.08)] group-hover:shadow-[0_40px_100px_rgba(15,37,23,0.15)] transition-all duration-700 border border-white/60">
-                    <motion.div style={{ x: imageParallax }} className="absolute inset-[-20%] w-[140%] h-[100%]">
+                  <div className="w-full flex-1 overflow-hidden relative rounded-[40px] md:rounded-[60px] shadow-[0_30px_80px_rgba(15,37,23,0.08)] group-hover:shadow-[0_40px_100px_rgba(15,37,23,0.15)] transition-all duration-700 border border-white/60">
+                    <motion.div style={{ x: imageParallax }} className="absolute top-0 bottom-0 left-[-20%] right-[-20%] w-[140%] h-full">
                       <img 
                         src={project.image} 
                         alt={project.title} 
@@ -120,32 +116,27 @@ export default function GalleryTeaser() {
                     <div className="absolute inset-0 bg-[#0F2517]/0 group-hover:bg-[#0F2517]/10 transition-colors duration-700 pointer-events-none" />
                   </div>
 
-                  {/* Floating Metadata Card */}
-                  <div className="absolute -bottom-8 md:-bottom-12 left-6 md:left-12 right-6 md:right-auto md:w-[85%] bg-white/95 backdrop-blur-3xl p-6 md:p-8 rounded-[24px] md:rounded-[32px] shadow-[0_20px_40px_rgba(15,37,23,0.06)] border border-white transition-transform duration-700 group-hover:-translate-y-2">
-                    <div className="flex justify-between items-center mb-4">
-                      <div className="flex items-center gap-3">
-                        <span className="font-serif text-[#7A9C7E] italic text-xl md:text-2xl">
-                          0{idx + 1}
-                        </span>
-                        <p className="font-sans text-[#0F2517]/60 text-[9px] tracking-[0.25em] uppercase font-bold">
-                          {project.category}
-                        </p>
-                      </div>
+                  {/* Centered Metadata Details Below Image */}
+                  <div className="flex flex-col items-center text-center px-4">
+                    {/* Category & Year */}
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-serif text-[#7A9C7E] italic text-sm md:text-base">
+                        0{idx + 1}
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#7A9C7E]/30" />
+                      <p className="font-sans text-[#0F2517]/60 text-[9px] tracking-[0.25em] uppercase font-bold">
+                        {project.category}
+                      </p>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#7A9C7E]/30" />
                       <p className="font-sans text-[#0F2517]/40 text-[9px] tracking-[0.2em] uppercase">
                         {project.year}
                       </p>
                     </div>
-                    
-                    <div className="flex justify-between items-end">
-                      <h3 className="font-serif text-3xl md:text-4xl text-[#0F2517] group-hover:text-[#7A9C7E] transition-colors duration-500 tracking-tight">
-                        {project.title}
-                      </h3>
-                      <div className="w-10 h-10 rounded-full border border-[#0F2517]/10 flex items-center justify-center group-hover:bg-[#7A9C7E] group-hover:border-[#7A9C7E] transition-colors duration-500">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#0F2517] group-hover:text-white transition-colors duration-500">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                    </div>
+
+                    {/* Project Title */}
+                    <h3 className="font-serif text-2xl md:text-3xl text-[#0F2517] group-hover:text-[#7A9C7E] transition-colors duration-500 tracking-tight">
+                      {project.title}
+                    </h3>
                   </div>
                 </Link>
               </div>

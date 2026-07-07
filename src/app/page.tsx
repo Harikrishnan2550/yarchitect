@@ -20,8 +20,8 @@ export default function Home() {
       {/* Relative Foreground Content */}
       <div className="relative z-10">
         <HeroSection />
-        <GalleryTeaser />
         <AboutSection />
+        <GalleryTeaser />
         <WhyChooseUs />
         <DirectorsSection />
         <ServicesTeaser />

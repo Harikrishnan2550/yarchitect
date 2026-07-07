@@ -92,48 +92,10 @@ export default function WhyChooseUs() {
         {/* Subtle Noise Texture */}
         <div className="absolute inset-0 modern-texture rounded-[48px] lg:rounded-[80px]" />
         
-        {/* Soft Organic Blob Background Accents */}
-        <motion.div 
-          animate={{ 
-            y: [0, -60, 0],
-            x: [0, 40, 0],
-            scale: [1, 1.25, 1],
-            rotate: [0, 15, 0]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-[-20%] left-[-10%] w-[60%] h-[70%] rounded-full bg-[#7A9C7E]/[0.25] blur-[120px] pointer-events-none" 
-        />
-        <motion.div 
-          animate={{ 
-            y: [0, 60, 0],
-            x: [0, -50, 0],
-            scale: [1, 1.3, 1],
-            rotate: [0, -15, 0]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[70%] rounded-full bg-[#0F2517]/[0.12] blur-[120px] pointer-events-none" 
-        />
-        <motion.div 
-          animate={{ 
-            y: [0, -40, 0],
-            x: [0, 60, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-[30%] left-[30%] w-[40%] h-[40%] rounded-full bg-[#7A9C7E]/[0.15] blur-[100px] pointer-events-none" 
-        />
+        {/* Soft Organic Blob Background Accents - Hardware accelerated & static to prevent scrolling lag */}
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[70%] rounded-full bg-[#7A9C7E]/[0.22] blur-[120px] pointer-events-none transform-gpu" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[70%] rounded-full bg-[#0F2517]/[0.10] blur-[120px] pointer-events-none transform-gpu" />
+        <div className="absolute top-[30%] left-[30%] w-[40%] h-[40%] rounded-full bg-[#7A9C7E]/[0.12] blur-[100px] pointer-events-none transform-gpu" />
 
         <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           
@@ -205,17 +167,13 @@ export default function WhyChooseUs() {
                 />
 
                 {/* Pill-shaped Number Indicator */}
-                <motion.div 
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: idx * 0.5 }}
-                  className="flex-shrink-0 relative z-10"
-                >
+                <div className="flex-shrink-0 relative z-10">
                   <div className="w-14 h-14 rounded-full bg-white group-hover:bg-[#7A9C7E]/15 flex items-center justify-center shadow-inner transition-all duration-500 border border-[#0F2517]/[0.04] group-hover:border-[#7A9C7E]/30 group-hover:scale-110">
                     <span className="font-serif text-xl italic text-[#0F2517]/50 group-hover:text-[#0F2517] transition-colors duration-500">
                       {item.num}
                     </span>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Content Block */}
                 <div className="flex flex-col relative w-full z-10">

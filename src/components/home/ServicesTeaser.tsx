@@ -103,7 +103,7 @@ export default function ServicesTeaser() {
               className="group relative flex flex-col bg-white p-10 md:p-12 lg:p-14 rounded-3xl shadow-[0_10px_40px_rgba(15,37,23,0.03)] hover:shadow-[0_30px_70px_rgba(15,37,23,0.08)] transition-all duration-700 overflow-hidden min-h-[420px] justify-between border border-forest/5"
             >
               {/* Massive Sheer Watermark Number */}
-              <div className="absolute -top-10 -right-10 font-serif text-[180px] font-light italic text-forest/5 group-hover:text-sage/10 group-hover:-translate-y-4 group-hover:-translate-x-4 transition-all duration-700 pointer-events-none select-none">
+              <div className="absolute -top-6 right-2 md:right-4 font-serif text-[140px] md:text-[180px] font-light italic text-forest/5 group-hover:text-sage/10 group-hover:-translate-y-4 group-hover:-translate-x-4 transition-all duration-700 pointer-events-none select-none">
                 {service.num}
               </div>
 

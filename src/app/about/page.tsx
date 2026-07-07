@@ -102,7 +102,7 @@
     return (
       <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className={`flex flex-wrap justify-center md:justify-start ${className}`}>
         {words.map((word, index) => (
-          <div key={index} className="overflow-hidden mr-[0.25em] mb-[-0.1em]">
+          <div key={index} className="overflow-hidden mr-[0.15em] pr-[0.1em] pb-[0.2em] mb-[-0.22em]">
             <motion.span variants={maskReveal} className="inline-block">{word}</motion.span>
           </div>
         ))}
@@ -141,9 +141,9 @@
                 </motion.div>
 
                 <div className="flex flex-col gap-1 md:gap-2">
-                  <AnimatedTitle text="Shaped by" className="font-serif text-[14vw] md:text-[100px] lg:text-[130px] font-light leading-[0.9] tracking-tighter" />
+                  <AnimatedTitle text="Shaped by" className="font-serif text-[14vw] md:text-[100px] lg:text-[130px] font-light leading-[1.1] tracking-tighter" />
                   <div className="md:pl-16">
-                    <AnimatedTitle text="Nature & Time." className="font-serif text-[14vw] md:text-[100px] lg:text-[130px] font-light leading-[0.9] tracking-tighter text-[#7A9C7E] italic" />
+                    <AnimatedTitle text="Nature & Time." className="font-serif text-[14vw] md:text-[100px] lg:text-[130px] font-light leading-[1.1] tracking-tighter text-[#7A9C7E] italic" />
                   </div>
                 </div>
               </motion.div>

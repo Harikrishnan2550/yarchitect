@@ -46,7 +46,7 @@ function MagneticButton({ href, label }: { href: string; label: string }) {
 
 export default function HomeCta() {
   return (
-    <section className="w-full py-40 md:py-64 px-6 bg-[#FAFAFA] flex flex-col items-center justify-center">
+    <section className="w-full py-16 md:py-24 px-6 bg-[#FAFAFA] flex flex-col items-center justify-center">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap');
         .font-serif { font-family: 'Cormorant Garamond', serif; }

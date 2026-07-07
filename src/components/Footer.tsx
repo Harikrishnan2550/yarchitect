@@ -44,13 +44,19 @@ export default function Footer() {
               Sitemap
             </h3>
             <div className="flex flex-col gap-4 font-sans text-[12px] tracking-[0.2em] uppercase">
-              {['About', 'Gallery', 'Why Choose Us', 'Contact'].map((item) => (
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About', path: '/about' },
+                { name: 'Gallery', path: '/gallery' },
+                { name: 'Services', path: '/services' },
+                { name: 'Contact', path: '/contact' },
+              ].map((item) => (
                 <Link 
-                  key={item} 
-                  href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} 
+                  key={item.name} 
+                  href={item.path} 
                   className="w-fit text-[#FAFAFA]/80 hover:text-[#7A9C7E] transition-colors duration-300 relative group"
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7A9C7E] transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}

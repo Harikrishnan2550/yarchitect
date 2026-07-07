@@ -39,14 +39,7 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
 };
 
-const portfolioData = [
-  { id: 1, title: "The Laterite House", category: "Residential", location: "Malappuram", image: "/img1.png" },
-  { id: 2, title: "Monsoon Retreat", category: "Hospitality", location: "Kochi", image: "/img5.png" },
-  { id: 3, title: "Oasis Workspace", category: "Commercial", location: "Calicut", image: "/img6.png" },
-  { id: 4, title: "Vastu Courtyard", category: "Residential", location: "Thrissur", image: "/img7.png" },
-  { id: 5, title: "The Brass Pavilion", category: "Cultural", location: "Trivandrum", image: "/img9.png" },
-  { id: 6, title: "Urban Canopy", category: "Commercial", location: "Ernakulam", image: "/img4.png" },
-];
+import { projectsData } from '@/data/projects';
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState('All');
@@ -57,8 +50,8 @@ export default function GalleryPage() {
 
   const categories = ['All', 'Residential', 'Commercial', 'Hospitality', 'Cultural'];
   const filteredProjects = filter === 'All' 
-    ? portfolioData 
-    : portfolioData.filter(p => p.category === filter);
+    ? projectsData 
+    : projectsData.filter(p => p.category === filter);
 
   return (
     <main className="min-h-screen bg-cream text-forest selection:bg-sage selection:text-white overflow-x-hidden" ref={containerRef}>
@@ -75,22 +68,23 @@ export default function GalleryPage() {
           animate="visible" 
           className="flex flex-col items-start mb-12 md:mb-20"
         >
-          <motion.div variants={sideReveal} className="flex items-center gap-3 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-            <p className="font-sans text-forest/50 tracking-[0.3em] text-[9px] md:text-[10px] uppercase font-bold">
-              Gallery // Works
-            </p>
-          </motion.div>
 
-          <div className="overflow-hidden">
-            <motion.h1 variants={sideReveal} className="font-serif text-[13vw] md:text-[100px] lg:text-[120px] font-light leading-[1.1] tracking-tighter">
-              The <span className="text-sage italic">Archives.</span>
-            </motion.h1>
+
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-full gap-8 lg:gap-20">
+            <div className="overflow-hidden">
+              <motion.h1 variants={sideReveal} className="font-serif text-[13vw] md:text-[100px] lg:text-[120px] font-light leading-[1.1] tracking-tighter">
+                Design <br /> 
+                <span className="inline-block pl-12 md:pl-20 pr-4 pb-3 text-sage italic">Gallery.</span>
+              </motion.h1>
+            </div>
+            
+            <motion.p 
+              variants={sideReveal} 
+              className="font-sans font-light text-[15px] leading-[1.8] text-forest/70 max-w-[440px] border-l border-sage/30 pl-5 shrink-0"
+            >
+              A chronological survey of contextual architecture. Each structure is a response to the specific geometry of its site.
+            </motion.p>
           </div>
-          
-          <motion.p variants={sideReveal} className="font-sans font-light text-[15px] leading-[1.8] text-forest/70 max-w-[480px] mt-6 border-l border-sage/30 pl-5">
-            A chronological survey of contextual architecture. Each structure is a response to the specific geometry of its site.
-          </motion.p>
         </motion.div>
 
         {/* ── 2. FEATURED PROJECT ── */}
@@ -102,9 +96,11 @@ export default function GalleryPage() {
               className="lg:col-span-5 flex flex-col order-2 lg:order-1"
             >
               <motion.span variants={sideReveal} className="font-sans text-sage text-[10px] tracking-[0.3em] uppercase font-bold mb-4">Case 01</motion.span>
-              <motion.h2 variants={sideReveal} className="font-serif text-[9vw] md:text-5xl lg:text-6xl text-forest leading-tight mb-6">
-                The Heritage <br /> <span className="italic text-sage font-light">Laterite House.</span>
-              </motion.h2>
+              <Link href="/gallery/the-laterite-house" className="group">
+                <motion.h2 variants={sideReveal} className="font-serif text-[9vw] md:text-5xl lg:text-6xl text-forest leading-tight mb-6 group-hover:text-sage transition-colors duration-500">
+                  The Heritage <br /> <span className="italic text-sage font-light">Laterite House.</span>
+                </motion.h2>
+              </Link>
               <motion.p variants={sideReveal} className="font-sans font-light text-[14px] md:text-[15px] leading-[1.7] text-forest/70 mb-8">
                 Raw materials meeting modern silhouettes. This residence leverages the thermal mass of laterite stones for natural cooling.
               </motion.p>
@@ -126,7 +122,9 @@ export default function GalleryPage() {
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               className="lg:col-span-7 h-[50vh] md:h-[60vh] w-full overflow-hidden bg-forest rounded-2xl md:rounded-[2rem] order-1 lg:order-2 group relative shadow-xl"
             >
-              <img src="/hero2.png" alt="Featured" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0" />
+              <Link href="/gallery/the-laterite-house" className="block w-full h-full">
+                <img src="/hero2.png" alt="Featured" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0" />
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -157,20 +155,21 @@ export default function GalleryPage() {
                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-5%" }} 
                 variants={index % 2 === 0 ? sideReveal : sideRevealRight}
                 key={project.id} 
-                className="group cursor-pointer flex flex-col"
               >
-                <div className="overflow-hidden w-full aspect-[4/5] bg-forest mb-5 relative rounded-xl md:rounded-[1.5rem] shadow-sm group-hover:shadow-xl transition-all duration-700">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-110 transition-transform duration-1000" />
-                  <div className="absolute inset-0 bg-forest/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                </div>
-
-                <div className="flex flex-col px-1">
-                  <div className="flex justify-between items-baseline mb-2">
-                    <p className="font-sans text-sage text-[9px] tracking-[0.2em] uppercase font-bold">{project.category} • {project.location}</p>
-                    <span className="font-serif text-forest/20 italic text-sm group-hover:text-sage transition-colors">0{project.id}</span>
+                <Link href={`/gallery/${project.id}`} className="group cursor-pointer flex flex-col">
+                  <div className="overflow-hidden w-full aspect-[4/5] bg-forest mb-5 relative rounded-xl md:rounded-[1.5rem] shadow-sm group-hover:shadow-xl transition-all duration-700">
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-110 transition-transform duration-1000" />
+                    <div className="absolute inset-0 bg-forest/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
-                  <h3 className="font-serif text-2xl text-forest group-hover:text-sage transition-colors duration-500 tracking-tight leading-tight">{project.title}</h3>
-                </div>
+
+                  <div className="flex flex-col px-1">
+                    <div className="flex justify-between items-baseline mb-2">
+                      <p className="font-sans text-sage text-[9px] tracking-[0.2em] uppercase font-bold">{project.category} • {project.location}</p>
+                      <span className="font-serif text-forest/20 italic text-sm group-hover:text-sage transition-colors">0{index + 1}</span>
+                    </div>
+                    <h3 className="font-serif text-2xl text-forest group-hover:text-sage transition-colors duration-500 tracking-tight leading-tight">{project.title}</h3>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>

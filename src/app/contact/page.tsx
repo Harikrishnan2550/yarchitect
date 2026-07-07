@@ -61,7 +61,7 @@ const AnimatedTitle = ({ text, className }: { text: string, className?: string }
   return (
     <motion.div variants={staggerContainer} initial="hidden" animate="visible" className={`flex flex-wrap ${className}`}>
       {words.map((word, index) => (
-        <div key={index} className="overflow-hidden mr-[0.25em] mb-[-0.1em]">
+        <div key={index} className="overflow-hidden mr-[0.15em] pr-[0.1em] pb-[0.2em] mb-[-0.22em]">
           <motion.span variants={maskReveal} className="inline-block">
             {word}
           </motion.span>
@@ -77,7 +77,7 @@ export default function ContactPage() {
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 40, damping: 20, restDelta: 0.001 });
 
   return (
-    <main className="min-h-screen bg-cream relative overflow-hidden text-forest pt-24 md:pt-40 pb-16 selection:bg-sage selection:text-white" ref={containerRef}>
+    <main className="min-h-screen bg-cream relative overflow-hidden text-forest pt-36 md:pt-44 pb-16 selection:bg-sage selection:text-white" ref={containerRef}>
       
       <FilmGrain />
       <motion.div className="fixed top-0 left-0 right-0 h-[3px] bg-sage origin-left z-[100]" style={{ scaleX: smoothProgress }} />
@@ -86,17 +86,12 @@ export default function ContactPage() {
         
         {/* ── HEADER ── */}
         <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="flex flex-col items-start mb-10 md:mb-16">
-          <motion.div variants={sideReveal} className="flex items-center gap-3 mb-4 md:mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-            <p className="font-sans text-forest/50 tracking-[0.3em] text-[9px] md:text-[10px] uppercase font-bold">
-              Inquiries // Communication
-            </p>
-          </motion.div>
+
 
           <div className="flex flex-col gap-1">
-            <AnimatedTitle text="Let's discuss" className="font-serif text-[12vw] md:text-[10vw] lg:text-[120px] font-light leading-[1] tracking-tighter" />
+            <AnimatedTitle text="Let's discuss" className="font-serif text-[12vw] md:text-[10vw] lg:text-[120px] font-light leading-[1.15] tracking-tighter" />
             <div className="lg:pl-16">
-              <AnimatedTitle text="your vision." className="font-serif text-[12vw] md:text-[10vw] lg:text-[120px] font-light leading-[1] tracking-tighter italic text-sage" />
+              <AnimatedTitle text="your vision." className="font-serif text-[12vw] md:text-[10vw] lg:text-[120px] font-light leading-[1.15] tracking-tighter italic text-sage" />
             </div>
           </div>
         </motion.div>
