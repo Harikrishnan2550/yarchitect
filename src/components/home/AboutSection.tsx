@@ -87,7 +87,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.5, delay: 0.3, ease: modernEase }}
-            className="w-[92%] sm:w-[80%] md:w-[600px] relative md:absolute -mt-16 md:mt-0 md:-bottom-24 lg:-bottom-32 self-center md:self-auto md:left-8 lg:left-12 bg-white/85 backdrop-blur-xl p-8 md:p-12 rounded-[24px] md:rounded-[32px] shadow-[0_30px_80px_rgba(15,37,23,0.1)] border border-white z-30"
+            className="w-[92%] sm:w-[80%] md:w-[600px] relative md:absolute -mt-16 md:mt-0 md:-bottom-24 lg:-bottom-32 self-center md:self-auto md:left-8 lg:left-12 bg-white/85 backdrop-blur-xl p-8 md:p-12 rounded-[12px] md:rounded-[16px] shadow-[0_30px_80px_rgba(15,37,23,0.1)] border border-white z-30"
           >
             <div className="font-sans text-[13px] md:text-[15px] leading-[2.1] text-[#0F2517]/80 font-light flex flex-col gap-6">
               <p>
@@ -99,7 +99,7 @@ export default function AboutSection() {
             </div>
 
             {/* Modern Interactive Button */}
-            <Link href="/about#directors" className="group flex items-center justify-between mt-8 md:mt-10 w-full md:w-fit gap-8 bg-[#FAFAFA] border border-[#0F2517]/10 hover:border-[#7A9C7E]/50 hover:shadow-[0_10px_30px_rgba(122,156,126,0.15)] transition-all duration-500 px-6 py-3 rounded-[24px]">
+            <Link href="/about#directors" className="group flex items-center justify-between mt-8 md:mt-10 w-full md:w-fit gap-8 bg-[#FAFAFA] border border-[#0F2517]/10 hover:border-[#7A9C7E]/50 hover:shadow-[0_10px_30px_rgba(122,156,126,0.15)] transition-all duration-500 px-6 py-3 rounded-[12px]">
               <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0F2517] font-semibold group-hover:text-[#7A9C7E] transition-colors duration-500">
                 Meet The Directors
               </span>

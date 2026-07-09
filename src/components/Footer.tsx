@@ -7,7 +7,7 @@ const premiumEase = [0.16, 1, 0.3, 1];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F2517] text-[#FAFAFA] pt-24 pb-8 px-6 md:px-16 lg:px-24 overflow-hidden rounded-t-[2rem]">
+    <footer className="bg-[#0F2517] text-[#FAFAFA] pt-24 pb-8 px-6 md:px-16 lg:px-24 overflow-hidden rounded-t-[1rem]">
       <div className="max-w-7xl mx-auto flex flex-col">
         
         {/* Top Section: Navigation & Info Grid */}

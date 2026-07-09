@@ -6,7 +6,7 @@ import Link from 'next/link';
 /* ─── Premium Modern Button (Matched to AboutSection) ────────────────── */
 function PremiumButton({ href, label }: { href: string; label: string }) {
   return (
-    <Link href={href} className="group flex items-center justify-between w-fit gap-8 bg-white border border-[#0F2517]/10 hover:border-[#7A9C7E]/50 hover:shadow-[0_10px_30px_rgba(122,156,126,0.15)] transition-all duration-500 px-6 py-3 rounded-[24px]">
+    <Link href={href} className="group flex items-center justify-between w-fit gap-8 bg-white border border-[#0F2517]/10 hover:border-[#7A9C7E]/50 hover:shadow-[0_10px_30px_rgba(122,156,126,0.15)] transition-all duration-500 px-6 py-3 rounded-[12px]">
       <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0F2517] font-semibold transition-colors duration-500">
         {label}
       </span>
@@ -100,7 +100,7 @@ export default function GalleryTeaser() {
                 <Link href={`/gallery/${project.id}`} className="flex flex-col w-full h-[65vh] md:h-[75vh] mt-8 md:mt-0 gap-6">
                   
                   {/* Image Window */}
-                  <div className="w-full flex-1 overflow-hidden relative rounded-[40px] md:rounded-[60px] shadow-[0_30px_80px_rgba(15,37,23,0.08)] group-hover:shadow-[0_40px_100px_rgba(15,37,23,0.15)] transition-all duration-700 border border-white/60">
+                  <div className="w-full flex-1 overflow-hidden relative rounded-[20px] md:rounded-[30px] shadow-[0_30px_80px_rgba(15,37,23,0.08)] group-hover:shadow-[0_40px_100px_rgba(15,37,23,0.15)] transition-all duration-700 border border-white/60">
                     <motion.div style={{ x: imageParallax }} className="absolute top-0 bottom-0 left-[-20%] right-[-20%] w-[140%] h-full">
                       <img 
                         src={project.image} 
@@ -110,7 +110,7 @@ export default function GalleryTeaser() {
                     </motion.div>
                     
                     {/* Inner Passepartout Border for Editorial Look */}
-                    <div className="absolute inset-4 md:inset-6 border-[0.5px] border-white/50 rounded-[24px] md:rounded-[40px] pointer-events-none z-10" />
+                    <div className="absolute inset-4 md:inset-6 border-[0.5px] border-white/50 rounded-[12px] md:rounded-[20px] pointer-events-none z-10" />
 
                     {/* Hover Soft Overlay */}
                     <div className="absolute inset-0 bg-[#0F2517]/0 group-hover:bg-[#0F2517]/10 transition-colors duration-700 pointer-events-none" />

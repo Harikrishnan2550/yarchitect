@@ -142,7 +142,7 @@ export default function ContactPage() {
           {/* Right Column: Staggered Form */}
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sideRevealRight}
-            className="lg:col-span-7 bg-white/40 backdrop-blur-md p-8 md:p-14 rounded-2xl md:rounded-[2rem] border border-forest/5 shadow-xl shadow-forest/[0.02]"
+            className="lg:col-span-7 bg-white/40 backdrop-blur-md p-8 md:p-14 rounded-[8px] md:rounded-[16px] border border-forest/5 shadow-xl shadow-forest/[0.02]"
           >
             <motion.form variants={staggerContainer} className="flex flex-col gap-8 md:gap-10">
               
@@ -210,7 +210,7 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Cinematic Curtain Reveal for the Map */}
-          <motion.div variants={clipReveal} className="w-full h-[40vh] md:h-[55vh] bg-forest/5 relative grayscale-[40%] hover:grayscale-0 transition-all duration-1000 ease-out overflow-hidden rounded-2xl md:rounded-[2rem] group shadow-lg">
+          <motion.div variants={clipReveal} className="w-full h-[40vh] md:h-[55vh] bg-forest/5 relative grayscale-[40%] hover:grayscale-0 transition-all duration-1000 ease-out overflow-hidden rounded-[8px] md:rounded-[16px] group shadow-lg">
             <iframe 
               src="https://www.google.com/maps?q=Y+Architects,Chenakkal,Kottakkal,Kerala&output=embed" 
               width="100%" 

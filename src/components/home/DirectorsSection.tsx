@@ -44,7 +44,7 @@ export default function DirectorsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 1.5, ease: modernEase }}
-              className="w-full max-w-[420px] aspect-[3/4] relative overflow-hidden rounded-[32px] md:rounded-[40px] shadow-[0_30px_80px_rgba(15,37,23,0.08)] border border-white/60 z-10"
+              className="w-full max-w-[420px] aspect-[3/4] relative overflow-hidden rounded-[16px] md:rounded-[20px] shadow-[0_30px_80px_rgba(15,37,23,0.08)] border border-white/60 z-10"
             >
               <motion.div 
                 style={{ y: imgParallax }}
@@ -58,7 +58,7 @@ export default function DirectorsSection() {
               </motion.div>
               
               {/* passepartout elegant line */}
-              <div className="absolute inset-4 border border-white/40 rounded-[20px] md:rounded-[28px] pointer-events-none z-20" />
+              <div className="absolute inset-4 border border-white/40 rounded-[10px] md:rounded-[14px] pointer-events-none z-20" />
               
               {/* Soft overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F2517]/20 via-transparent to-transparent pointer-events-none z-10" />
@@ -70,7 +70,7 @@ export default function DirectorsSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.4, ease: modernEase }}
-              className="absolute bottom-6 -left-2 md:-left-8 bg-white/95 backdrop-blur-md px-6 py-4 rounded-[20px] shadow-[0_15px_40px_rgba(15,37,23,0.06)] border border-white/50 z-20 flex items-center gap-3.5"
+              className="absolute bottom-6 -left-2 md:-left-8 bg-white/95 backdrop-blur-md px-6 py-4 rounded-[10px] shadow-[0_15px_40px_rgba(15,37,23,0.06)] border border-white/50 z-20 flex items-center gap-3.5"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[#7A9C7E] animate-pulse" />
               <div>

@@ -87,10 +87,10 @@ export default function WhyChooseUs() {
       `}</style>
 
       {/* Main Soft Container */}
-      <div className="bg-gradient-to-br from-[#E8EFEA] via-[#F4F7F5] to-[#DFEBE1] rounded-[48px] lg:rounded-[80px] py-20 lg:py-32 px-6 md:px-12 relative w-full overflow-hidden shadow-[0_20px_80px_rgba(15,37,23,0.06)] border border-[#0F2517]/[0.04] max-w-[1400px] mx-auto">
+      <div className="bg-gradient-to-br from-[#E8EFEA] via-[#F4F7F5] to-[#DFEBE1] rounded-[24px] lg:rounded-[40px] py-20 lg:py-32 px-6 md:px-12 relative w-full overflow-hidden shadow-[0_20px_80px_rgba(15,37,23,0.06)] border border-[#0F2517]/[0.04] max-w-[1400px] mx-auto">
         
         {/* Subtle Noise Texture */}
-        <div className="absolute inset-0 modern-texture rounded-[48px] lg:rounded-[80px]" />
+        <div className="absolute inset-0 modern-texture rounded-[24px] lg:rounded-[40px]" />
         
         {/* Soft Organic Blob Background Accents - Hardware accelerated & static to prevent scrolling lag */}
         <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[70%] rounded-full bg-[#7A9C7E]/[0.22] blur-[120px] pointer-events-none transform-gpu" />
@@ -159,7 +159,7 @@ export default function WhyChooseUs() {
                 whileHover={{ scale: 1.02, y: -5 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ ...springTransition, delay: idx * 0.1 }}
-                className="group relative bg-white p-8 md:p-10 rounded-[40px] shadow-[0_10px_40px_rgba(15,37,23,0.03)] hover:shadow-[0_20px_60px_rgba(122,156,126,0.15)] flex flex-col md:flex-row gap-6 md:gap-8 items-start overflow-hidden border border-[#0F2517]/[0.02] hover:border-[#7A9C7E]/30 transition-all duration-700"
+                className="group relative bg-white p-8 md:p-10 rounded-[20px] shadow-[0_10px_40px_rgba(15,37,23,0.03)] hover:shadow-[0_20px_60px_rgba(122,156,126,0.15)] flex flex-col md:flex-row gap-6 md:gap-8 items-start overflow-hidden border border-[#0F2517]/[0.02] hover:border-[#7A9C7E]/30 transition-all duration-700"
               >
                 {/* Soft Background Highlight on Hover */}
                 <motion.div 
